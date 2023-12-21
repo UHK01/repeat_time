@@ -40,3 +40,13 @@ html {
 .licence {
     text-align: center;
 }
+
+.back_link {
+    text-decoration: none;
+    color: aquamarine;
+}
+
+.command {
+    text-align: left;
+    padding-left: 15%;
+}
