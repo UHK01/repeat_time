@@ -1,36 +1,11 @@
 html {
     font-family: "YakuHanJP_Noto", "Noto Sans JP", "Hiragino Kaku Gothic Pro W3", "ヒラギノ角ゴ Pro W3", "メイリオ", "sans-serif";
-    background-color: rgb(255, 205, 205);
-}
-.home {
-    text-align: center;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    margin:2% auto;
-    width:50%;
-    opacity: 0.8;
-}
-
-.settime {
-    width: 50px;
-}
-
-.bar {
-    width: 50%;
+    background-color: rgb(205, 255, 250);
+    /* background-color: rgb(255, 205, 205); */
 }
 
 .error {
     color: red;
-}
-
-.nokori_box {
-    border: 1px solid black;
-    border-radius: 10px;
-    padding-top: 30px;
-}
-
-.nokori {
-    font-size: 50px;
 }
 
 .ver {
@@ -43,10 +18,197 @@ html {
 
 .back_link {
     text-decoration: none;
-    color: aquamarine;
+    color: rgb(252, 205, 93);
 }
 
-.command {
-    text-align: left;
-    padding-left: 15%;
+
+@media screen and (min-width:1100px) {
+
+	.home {
+        text-align: center;
+        background-color: rgb(235, 235, 235);
+        border-radius: 10px;
+        margin:2% auto;
+        width:70%;
+        opacity: 0.8;
+    }
+    
+    .settime {
+        width: 50px;
+    }
+    
+    .bar {
+        width: 50%;
+    }
+    
+    .nokori_box {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding-top: 30px;
+    }
+    
+    .nokori {
+        font-size: 50px;
+    }
+    
+    .command {
+        text-align: left;
+        padding-left: 15%;
+    }
+
+}
+
+@media screen and (max-width: 1100px) and (min-width:700px) {
+    .home {
+        text-align: center;
+        background-color: rgb(235, 235, 235);
+        border-radius: 10px;
+        margin:2% auto;
+        width:80%;
+        opacity: 0.8;
+    }
+
+    .settime {
+        width: 50px;
+    }
+    
+    .bar {
+        width: 50%;
+    }
+    
+    .nokori_box {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding-top: 30px;
+    }
+    
+    .nokori {
+        font-size: 50px;
+    }
+    
+    .command {
+        text-align: left;
+        padding-left: 15%;
+    }
+
+}
+
+@media screen and (max-width:700px) and (min-width:500px) {
+    .home {
+        text-align: center;
+        background-color: rgb(235, 235, 235);
+        border-radius: 10px;
+        margin:2% auto;
+        width:90%;
+        opacity: 0.8;
+    }
+
+    .settime {
+        width: 50px;
+        font-size: 16px;
+    }
+    
+    .bar {
+        width: 70%;
+    }
+    
+    .nokori_box {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding-top: 20px;
+    }
+    
+    .nokori {
+        font-size: 40px;
+    }
+    
+    .command {
+        text-align: left;
+        padding-left: 15%;
+    }
+
+    button {
+        width: 60px;
+        font-size: 10px;
+    }
+
+    .data_clear {
+        width: auto;
+    }
+
+    .start {
+        width: auto;
+    }
+
+    .licence {
+        font-size: 10px;
+    }
+
+    .ver {
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width:500px) and (min-width:347px) {
+    .home {
+        text-align: center;
+        background-color: rgb(235, 235, 235);
+        border-radius: 10px;
+        margin:2% auto;
+        width:100%;
+        opacity: 0.8;
+    }
+
+    .settime {
+        width: 50px;
+        font-size: 16px;
+    }
+    
+    .bar {
+        width: 70%;
+    }
+    
+    .nokori_box {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding-top: 4vw;
+    }
+    
+    .nokori {
+        font-size: 8vw;
+    }
+    
+    .command {
+        text-align: left;
+        padding-left: 15%;
+    }
+
+    button {
+        width: 60px;
+        font-size: 10px;
+    }
+
+    .data_clear {
+        width: auto;
+    }
+
+    .start {
+        width: auto;
+    }
+
+    .licence {
+        font-size: 10px;
+    }
+
+    .ver {
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width:347px) {
+    html {
+        background-color: white;
+    }
 }

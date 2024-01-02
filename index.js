@@ -31,6 +31,12 @@ function input_check2(object) {
     }
 }
 
+function change_mirisec(change_time) {
+    change_hour = Math.floor(change_time/1000/60/60);
+    change_minute = Math.floor(change_time/1000/60)%60;
+    change_secound = Math.floor(change_time/1000)%60;
+}
+
 function music_set() {
     music = new Audio('lv.mp3');
     music.load();
@@ -66,6 +72,16 @@ function timer_set() {
     total_time1 = set_hour * 60 * 60;
     total_time2 = set_minute * 60;
     total_time = total_time1 + total_time2 + set_secound;
+    now_hour_sec = now_hour * 60 * 60;
+    now_minute_sec = now_minute * 60;
+    now_total = now_hour_sec + now_minute_sec + now_secound + total_time;
+    sc_hour = Math.floor(now_total / 60 / 60);
+    sc_minute = Math.floor(now_total / 60 % 60);
+    sc_secound = Math.floor(now_total % 60);
+
+    document.getElementById('sc_hour').innerHTML = sc_hour;
+    document.getElementById('sc_minute').innerHTML = sc_minute;
+    document.getElementById('sc_secound').innerHTML = sc_secound;
 
     if(set_hour >= 1) {
         document.getElementById("nokori_hour").innerHTML = set_hour;
@@ -98,7 +114,6 @@ function timer_start() {
         set1 = timer / 60 / 60;
         set2 = timer / 60 % 60;
         set3 = timer % 60;
-        // document.getElementById("nokori_secound").innerHTML = set1;
         console.log(timer);
         document.getElementById("nokori_hour").innerHTML = Math.floor(set1);
         document.getElementById("nokori_minute").innerHTML = Math.floor(set2);
@@ -142,10 +157,46 @@ function reset() {
     document.getElementById("stop").setAttribute("onclick", "stop()");
     document.getElementById("bar").value = 0;
     progress = 0;
+    document.getElementById('sc_hour').innerHTML = 0;
+    document.getElementById('sc_minute').innerHTML = 0;
+    document.getElementById('sc_secound').innerHTML = 0;
 }
 
 function clear_data() {
     document.getElementById("hour").value = '';
     document.getElementById("minute").value = '';
     document.getElementById("secound").value = '';
+}
+
+responce_check = false;
+
+function switchByWidth(){
+    if (window.matchMedia('(max-width: 347px)').matches) {
+        document.getElementById("home").innerHTML = "申し訳ございません。お客様の端末ではこのページを表示することができません。もし348pxを超えている場合は再読み込みをお願いいたします。";
+        responce_check = true;
+    } else if (window.matchMedia('(min-width:347px)')) {
+        if (responce_check) {
+            location.reload();
+            responce_check = false;
+        }
+    }
+}
+
+window.addEventListener('load' , () => {
+    switchByWidth();
+    now_what_time();
+})
+
+window.onresize = switchByWidth;
+
+function now_what_time() {
+    now_time = setInterval(function() {
+        data_time = new Date()
+        now_hour = data_time.getHours();
+        now_minute = data_time.getMinutes();
+        now_secound = data_time.getSeconds();
+        document.getElementById('now_hour').innerHTML = now_hour;
+        document.getElementById('now_minute').innerHTML = now_minute;
+        document.getElementById('now_secound').innerHTML = now_secound;
+    },1000)
 }
