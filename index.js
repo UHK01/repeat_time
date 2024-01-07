@@ -74,6 +74,7 @@ function timer_set() {
     total_time = total_time1 + total_time2 + set_secound;
     now_hour_sec = now_hour * 60 * 60;
     now_minute_sec = now_minute * 60;
+    now_total_secound = now_hour_sec + now_minute_sec + now_secound
     now_total = now_hour_sec + now_minute_sec + now_secound + total_time;
     sc_hour = Math.floor(now_total / 60 / 60);
     sc_minute = Math.floor(now_total / 60 % 60);
@@ -141,6 +142,16 @@ function play() {
     timer_start();
     document.getElementById("stop").innerHTML = "ストップ";
     document.getElementById("stop").setAttribute("onclick", "stop()");
+    now_hour_sec = now_hour * 60 * 60;
+    now_minute_sec = now_minute * 60;
+    now_total = now_hour_sec + now_minute_sec + now_secound + timer + 1;
+    sc_hour = Math.floor(now_total / 60 / 60);
+    sc_minute = Math.floor(now_total / 60 % 60);
+    sc_secound = Math.floor(now_total % 60);
+
+    document.getElementById('sc_hour').innerHTML = sc_hour;
+    document.getElementById('sc_minute').innerHTML = sc_minute;
+    document.getElementById('sc_secound').innerHTML = sc_secound;
 }
 
 function reset() {
@@ -200,3 +211,8 @@ function now_what_time() {
         document.getElementById('now_secound').innerHTML = now_secound;
     },1000)
 }
+
+window.addEventListener("focus", () => {
+    error_time = now_total_secound - now_total;
+    console.log(error_time);
+});

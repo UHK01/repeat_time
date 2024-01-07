@@ -150,7 +150,7 @@ html {
 
 }
 
-@media screen and (max-width:500px) and (min-width:347px) {
+@media screen and (max-width:500px) and (min-width:348px) {
     .home {
         text-align: center;
         background-color: rgb(235, 235, 235);
