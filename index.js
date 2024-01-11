@@ -14,7 +14,7 @@ document.getElementById('secound').addEventListener('change', () => {
 function input_check(object) {
     if(document.getElementById(object).value <= 0) {
         document.getElementById("error").innerHTML = "0以下の値に設定することはできません!";
-        document.getElementById("start").setAttribute("disabled");
+        //document.getElementById("start").setAttribute("disabled", true);
     } else {
         document.getElementById("error").innerHTML = "";
         document.getElementById("start").removeAttribute("disabled");
@@ -24,7 +24,7 @@ function input_check(object) {
 function input_check2(object) {
     if(document.getElementById(object).value <= 0 || document.getElementById(object).value >= 60) {
         document.getElementById("error").innerHTML = "0以下の値または59以上に設定することはできません!";
-        document.getElementById("start").setAttribute("disabled");
+        //document.getElementById("start").setAttribute("disabled", true);
     } else {
         document.getElementById("error").innerHTML = "";
         document.getElementById("start").removeAttribute("disabled");
