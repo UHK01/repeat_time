@@ -14,7 +14,7 @@ document.getElementById('secound').addEventListener('change', () => {
 function input_check(object) {
     if(document.getElementById(object).value <= 0) {
         document.getElementById("error").innerHTML = "0以下の値に設定することはできません!";
-        document.getElementById("start").setAttribute("disabled", true);
+        document.getElementById("start").setAttribute("disabled");
     } else {
         document.getElementById("error").innerHTML = "";
         document.getElementById("start").removeAttribute("disabled");
