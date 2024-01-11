@@ -1,4 +1,4 @@
-document.getElementById("ver").innerHTML = "4.0";
+document.getElementById("ver").innerHTML = "4.1";
 document.getElementById('hour').addEventListener('change', () => {
     input_check('hour');
 });
